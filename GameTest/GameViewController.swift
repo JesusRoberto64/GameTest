@@ -12,6 +12,9 @@ import GameplayKit
 
 class GameViewController: UIViewController {
 
+    //PRUBA PARA GITHUB
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -26,25 +29,29 @@ class GameViewController: UIViewController {
             }
             
             view.ignoresSiblingOrder = true
-            
             view.showsFPS = true
             view.showsNodeCount = true
         }
+        
+//        UIDevice.current.setValue(self.preferredInterfaceOrientationForPresentation, forKey: "orientation")
     }
 
     override var shouldAutorotate: Bool {
-        return true
+        return false
     }
 
     override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
-        if UIDevice.current.userInterfaceIdiom == .phone {
-            return .allButUpsideDown
-        } else {
-            return .all
-        }
+
+        return .landscape
+    }
+    
+    override var preferredInterfaceOrientationForPresentation: UIInterfaceOrientation{
+        return .landscapeLeft
     }
 
     override var prefersStatusBarHidden: Bool {
         return true
     }
+    
+    
 }

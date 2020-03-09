@@ -17,6 +17,7 @@
 		8622701C2409AFFB0063A923 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8622701A2409AFFB0063A923 /* LaunchScreen.storyboard */; };
 		862270272409AFFB0063A923 /* GameTestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 862270262409AFFB0063A923 /* GameTestTests.swift */; };
 		862270322409AFFB0063A923 /* GameTestUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 862270312409AFFB0063A923 /* GameTestUITests.swift */; };
+		FCC987E22416BC76007E466B /* LaunchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCC987E12416BC76007E466B /* LaunchViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,7 @@
 		8622702D2409AFFB0063A923 /* GameTestUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GameTestUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		862270312409AFFB0063A923 /* GameTestUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameTestUITests.swift; sourceTree = "<group>"; };
 		862270332409AFFB0063A923 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FCC987E12416BC76007E466B /* LaunchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +110,7 @@
 				8622700F2409AFF90063A923 /* Actions.sks */,
 				862270112409AFF90063A923 /* GameScene.swift */,
 				862270132409AFF90063A923 /* GameViewController.swift */,
+				FCC987E12416BC76007E466B /* LaunchViewController.swift */,
 				862270152409AFF90063A923 /* Main.storyboard */,
 				862270182409AFFB0063A923 /* Assets.xcassets */,
 				8622701A2409AFFB0063A923 /* LaunchScreen.storyboard */,
@@ -270,6 +273,7 @@
 				862270122409AFF90063A923 /* GameScene.swift in Sources */,
 				862270142409AFF90063A923 /* GameViewController.swift in Sources */,
 				8622700C2409AFF90063A923 /* AppDelegate.swift in Sources */,
+				FCC987E22416BC76007E466B /* LaunchViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -445,6 +449,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 25VCUTX828;
 				INFOPLIST_FILE = GameTest/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -463,6 +468,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 25VCUTX828;
 				INFOPLIST_FILE = GameTest/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
