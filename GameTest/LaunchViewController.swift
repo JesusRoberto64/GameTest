@@ -29,4 +29,9 @@ class LaunchViewController: UIViewController {
         return .landscapeLeft
     }
 
+    override var prefersStatusBarHidden: Bool {
+           return true
+       }
+    
+    
 }
