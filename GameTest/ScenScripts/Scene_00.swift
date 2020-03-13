@@ -15,6 +15,7 @@ class Scene_00: GameScene {
     override func sceneDidLoad() {
         super .sceneDidLoad()
         
+        
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {

@@ -22,6 +22,7 @@ class GameScene: SKScene {
     var btnStart: SKSpriteNode?
     var nextScene: SKScene?
     var homeScene: SKScene?
+    var strSound: SKAudioNode?
     //DEclaracion de Ndoso
     
     override func sceneDidLoad() {
@@ -34,11 +35,17 @@ class GameScene: SKScene {
         btnStart = childNode(withName: "//StartButton") as? SKSpriteNode
         //nextScene = SKScene(fileNamed: "Scene_00") as? Scene_00
         //homeScene = SKScene(fileNamed: "GameScene") as? GameScene
+        strSound = childNode(withName: "clickSnd") as? SKAudioNode
+        //strSound?.autoplayLooped = false
     }
     
     
     override func didMove(to view: SKView) {
- 
+//        let action = SKAction.play()
+//        strSound?.run(action){
+//            print("dd")
+//        }
+        //playSound(sound: strSound)
     }
     
     func touchDown(atPoint pos : CGPoint) {
@@ -49,11 +56,12 @@ class GameScene: SKScene {
         guard let touch = touches.first else {return}
         
         let touchLocation = touch.location(in: self)
+        
     // Using optional
         if let statButton = btnStart{
             if statButton.contains(touchLocation){
-                 nextScene = SKScene(fileNamed: "Scene_00") as? Scene_00
-                 goToScene(scene: nextScene!)
+                nextScene = SKScene(fileNamed: "Scene_00") as? Scene_00
+                goToScene(scene: nextScene!)
             }
         }
     }
@@ -65,11 +73,18 @@ class GameScene: SKScene {
     // Fuction to trancitions
     
     func goToScene(scene: SKScene){
+        
         let sceneTransition = SKTransition.fade(with: UIColor.darkGray, duration: 1.5)
         scene.scaleMode = .aspectFill
         self.view?.presentScene(scene, transition: sceneTransition)
         
     }
     
+    func playSound(sound: SKAudioNode?){
+        let action = SKAction.play()
+        sound?.run(action){
+            
+        }
+    }
     
 }
