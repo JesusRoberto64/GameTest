@@ -19,9 +19,9 @@ class GameScene: SKScene {
     var btnPrevous: SKSpriteNode!
     var btnSound: SKSpriteNode!
     var btnHome: SKSpriteNode!
-    var btnStart: SKSpriteNode!
-    var nextScene: SKScene!
-    var homeScene: SKScene!
+    var btnStart: SKSpriteNode?
+    var nextScene: SKScene?
+    var homeScene: SKScene?
     //DEclaracion de Ndoso
     
     override func sceneDidLoad() {
@@ -31,9 +31,9 @@ class GameScene: SKScene {
         btnPrevous = childNode(withName: "//PrevousButton") as! SKSpriteNode
         btnSound = childNode(withName: "//SoundButton") as! SKSpriteNode
         btnHome = childNode(withName: "//HomeButton") as! SKSpriteNode
-        btnStart = childNode(withName: "//StartButton") as! SKSpriteNode
-        nextScene = SKScene(fileNamed: "Scene_00") as! SKScene
-        //homeScene = SKScene(fileNamed: "GameScene") as! SKScene
+        btnStart = childNode(withName: "//StartButton") as? SKSpriteNode
+        nextScene = SKScene(fileNamed: "Scene_00") as? Scene_00
+        //homeScene = SKScene(fileNamed: "GameScene") as? GameScene
     }
     
     
@@ -41,16 +41,21 @@ class GameScene: SKScene {
  
     }
     
+    func touchDown(atPoint pos : CGPoint) {
+       print("dsfdsf")
+    }
 
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?){
         guard let touch = touches.first else {return}
         
         let touchLocation = touch.location(in: self)
-        
-        if btnStart.contains(touchLocation){
-            goToScene(scene: nextScene)
+        print("dfdsf")
+    // Using optional
+        if let statButton = btnStart{
+            if statButton.contains(touchLocation){
+                goToScene(scene: nextScene!)
+            }
         }
-        
     }
 
     override func update(_ currentTime: TimeInterval) {
