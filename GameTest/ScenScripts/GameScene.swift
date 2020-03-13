@@ -14,11 +14,11 @@ class GameScene: SKScene {
     private var label : SKLabelNode?
     private var spinnyNode : SKShapeNode?
     
-    var labelFooter: SKNode!
-    var btnNext: SKSpriteNode!
-    var btnPrevous: SKSpriteNode!
-    var btnSound: SKSpriteNode!
-    var btnHome: SKSpriteNode!
+    var labelFooter: SKNode?
+    var btnNext: SKSpriteNode?
+    var btnPrevous: SKSpriteNode?
+    var btnSound: SKSpriteNode?
+    var btnHome: SKSpriteNode?
     var btnStart: SKSpriteNode?
     var nextScene: SKScene?
     var homeScene: SKScene?
@@ -27,12 +27,12 @@ class GameScene: SKScene {
     override func sceneDidLoad() {
         super.sceneDidLoad()
         labelFooter = childNode(withName: "Footer")
-        btnNext = childNode(withName: "//NextButton") as! SKSpriteNode
-        btnPrevous = childNode(withName: "//PrevousButton") as! SKSpriteNode
-        btnSound = childNode(withName: "//SoundButton") as! SKSpriteNode
-        btnHome = childNode(withName: "//HomeButton") as! SKSpriteNode
+        btnNext = childNode(withName: "//NextButton") as? SKSpriteNode
+        btnPrevous = childNode(withName: "//PrevousButton") as? SKSpriteNode
+        btnSound = childNode(withName: "//SoundButton") as? SKSpriteNode
+        btnHome = childNode(withName: "//HomeButton") as? SKSpriteNode
         btnStart = childNode(withName: "//StartButton") as? SKSpriteNode
-        nextScene = SKScene(fileNamed: "Scene_00") as? Scene_00
+        //nextScene = SKScene(fileNamed: "Scene_00") as? Scene_00
         //homeScene = SKScene(fileNamed: "GameScene") as? GameScene
     }
     
@@ -49,11 +49,11 @@ class GameScene: SKScene {
         guard let touch = touches.first else {return}
         
         let touchLocation = touch.location(in: self)
-        print("dfdsf")
     // Using optional
         if let statButton = btnStart{
             if statButton.contains(touchLocation){
-                goToScene(scene: nextScene!)
+                 nextScene = SKScene(fileNamed: "Scene_00") as? Scene_00
+                 goToScene(scene: nextScene!)
             }
         }
     }

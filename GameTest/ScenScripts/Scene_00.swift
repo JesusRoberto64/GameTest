@@ -10,34 +10,25 @@ import SpriteKit
 import GameplayKit
 
 
-class Scene_00: SKScene {
-    
-    var botonHome: SKSpriteNode?
-    var homeScene: SKScene?
+class Scene_00: GameScene {
     
     override func sceneDidLoad() {
         super .sceneDidLoad()
         
-        botonHome = childNode(withName: "//HomeButton") as? SKSpriteNode
-        homeScene = SKScene(fileNamed: "GameScene") as? GameScene
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
       guard let touch = touches.first else {return}
           
           let touchLocation = touch.location(in: self)
-          
-        
-        print("touce")
+
       // Using optional
-          if let homeButton = botonHome{
+          if let homeButton = btnHome{
               if homeButton.contains(touchLocation){
-                  //goToScene(scene: homeScene!)
-                print("llll")
+                homeScene = SKScene(fileNamed: "GameScene") as? GameScene
+                goToScene(scene: homeScene!)
               }
           }
-        
     }
-    
     
 }
